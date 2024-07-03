@@ -33,7 +33,7 @@ const llamar = async (categoria) => {
     
     const id_usuario = sessionStorage.getItem('idUsuario');
     
-    const response = await fetch(`https://cac-deploy-silk.vercel.app/api/favoritos/${parseInt(id_usuario)}`);
+    const response = await fetch(`https://backend-biblioteca-back.vercel.app/api/favoritos/${parseInt(id_usuario)}`);
     const arrayFavoritos = await response.json();
     
     const insertarDatos = (datos) => {
@@ -71,7 +71,7 @@ const llamar = async (categoria) => {
         if(categoria === 'titulo') {
             nombreDelLibro = $d.getElementById('libroPorTitulo').value.toLowerCase();
         }
-        fetch(`https://cac-deploy-silk.vercel.app/api/libros?nombreLibro=${nombreDelLibro}&categoria=${categoria}`)
+        fetch(`https://backend-biblioteca-back.vercel.app/api/libros?nombreLibro=${nombreDelLibro}&categoria=${categoria}`)
         .then(res => res.json())
         .then(res => insertarDatos(res))
         .catch(err => console.log(err));  

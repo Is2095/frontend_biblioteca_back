@@ -4,7 +4,7 @@ const $d = document;
 const login = () => {
     const emailLogin = $d.getElementById('loginEmail')
 
-    fetch('https://cac-deploy-silk.vercel.app/api/usuario', {
+    fetch('https://backend-biblioteca-back.vercel.app/api/usuario', {
         method: 'POST',
         headers: {
             'Content-Type': 'application/json'
